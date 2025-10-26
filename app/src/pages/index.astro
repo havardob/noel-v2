@@ -1,16 +1,79 @@
 ---
-
+import "../assets/css/reset.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Fact from "../components/Fact.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Noel.fun</title>
+  </head>
+  <body>
+    <div class="site">
+      <Header />
+      <main class="main">
+        <Fact />
+      </main>
+      <Footer />
+    </div>
+  </body>
 </html>
+
+<style is:global>
+   :root {
+      --color-sand: #EEECE7;
+      --color-moist-sand: #625637;
+   }
+
+   html, body {
+      overscroll-behavior: none;
+   }
+
+   body {
+      font-family: "NyghtSerif", serif;
+      background-color: var(--color-sand);
+      color: var(--color-moist-sand);
+      min-height: 100dvh;
+      display: grid;
+   }
+
+   .site {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+   }
+
+   .link {
+      font-size: clamp(1rem, 3vw, 2rem);
+      text-decoration-thickness: 1px;
+      text-decoration-color: transparent;
+      text-underline-offset: .25em;
+      background-color: var(--color-sand);
+      padding-inline: .5em;
+      position: relative;
+      text-align: center;
+   }
+
+   .link:after {
+      display: block;
+      content: attr(data-content);
+      font-weight: bold;
+      font-style: normal;
+      height: 0;
+      visibility: hidden;
+      letter-spacing: 0.05em;
+   }
+
+   .link:not(.logo):hover {
+      font-style: italic;
+      letter-spacing: 0.05em;
+   }
+
+   .link:hover {
+      text-decoration-color: currentColor;
+   }
+</style>

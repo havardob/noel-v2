@@ -1,0 +1,42 @@
+<article class="fact">
+  <h2 class="title"><span class="u-hidden">Fact no.</span> <span aria-hidden="true">#</span>109</h2>
+  <p class="text">
+    There are so many trees inside London's borders that it by definition makes the city a forest
+  </p>
+</article>
+
+
+<style>
+   .u-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+   }
+
+   .fact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: .25em;
+      font-size: clamp(2rem, 5vw, 6rem);
+      text-align: center;
+      width: min(90vw, 1400px);
+      margin-inline: auto;
+   }
+
+   .title {
+      font-weight: 300;
+      line-height: 1;
+      font-size: clamp(1rem, 3vw, 3rem);
+   }
+
+   .text {
+      text-wrap: pretty;
+      line-height: 1.15;
+   }
+</style>
